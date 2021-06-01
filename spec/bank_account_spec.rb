@@ -1,13 +1,18 @@
+# frozen_string_literal: true
+
 require 'bank_account'
 
 describe BankAccount do
 
-  context '#deposit' do
-    it 'can deposit money into the account' do
-      bank_account = BankAccount.new
-      bank_account.deposit(1000)
-      expect(bank_account.balance).to eq 1000
-    end
+  it 'account is initially empty' do
+    bank_account = BankAccount.new
+    expect(bank_account.balance).to eq 0    
+  end
+
+  it 'can deposit money into the account' do
+    bank_account = BankAccount.new
+    bank_account.deposit(1000)
+    expect(bank_account.balance).to eq 1000
   end
   
   context '#withdraw' do
@@ -17,12 +22,12 @@ describe BankAccount do
       bank_account.withdraw(500)
       expect(bank_account.balance).to eq 500
     end
-  
-    it 'should raise an error if the balance is under 0' do
+
+    it 'should raise an error if the balance is 0' do
       bank_account = BankAccount.new
       bank_account.deposit(1000)
-      bank_account.withdraw(1000)
-      expect { subject.withdraw(1) }.to raise_error("Your balance is currently £0")
+      expect { bank_account.withdraw(1001) }.to raise_error 'Your current balance is 0'
     end
   end
+  
 end

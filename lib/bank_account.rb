@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 class BankAccount
   attr_reader :balance
 
@@ -10,8 +12,7 @@ class BankAccount
   end
 
   def withdraw(money)
-    raise "Your balance is currently £0" if @balance == 0
+    raise 'Your current balance is 0' if @balance - money <= 0
     @balance -= money
   end
-
 end
