@@ -26,7 +26,7 @@ describe BankAccount do
     it 'should raise an error if the balance is 0' do
       bank_account = BankAccount.new
       bank_account.deposit(1000)
-      expect { bank_account.withdraw(1001) }.to raise_error 'Your current balance is 0'
+      expect { bank_account.withdraw(1001) }.to raise_error 'Insufficient funds'
     end
   end
   
