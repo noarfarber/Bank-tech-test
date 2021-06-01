@@ -10,7 +10,8 @@ class BankAccount
   end
 
   def withdraw(money)
+    raise "Your balance is currently £0" if @balance == 0
     @balance -= money
   end
-  
+
 end

@@ -1,5 +1,7 @@
 # Bank Tech Test
 
+### How to use
+
 ## Specification 
 
 ### Requirements
@@ -22,25 +24,30 @@ date       || credit  || debit  || balance
 10/01/2012 || 1000.00 ||        || 1000.00
 ```
 
-## User Stories
+### User Stories
 
 ```
-As a user
+As a bank account holder
 So that I can briefly keep track of my financial situation
 I would like to be able to see my balance
 ```
 ```
-As a user 
+As a bank account holder 
 So that I can safely keep my money in my bank account 
 I would like to be able to deposit money into my bank account
 ```
 ```
-As a user
+As a bank account holder
 So that I can buy something 
 I would like to be able to withdraw money from my bank account
 ```
 ```
-As a user 
+As a bank account holder
+So that I never spend money which I don't have
+I can't withdraw money if my balance is under £0
+```
+```
+As a bank account holder 
 So that I can see my recent transactions in detail
 I would like to be able to print my bank statement
 ```
