@@ -4,15 +4,24 @@ require 'bank_account'
 
 describe BankAccount do
 
-  it 'account is initially empty' do
-    bank_account = BankAccount.new
-    expect(bank_account.balance).to eq 0    
+  context '#initialize' do
+    it 'account is initially empty' do
+      bank_account = BankAccount.new
+      expect(bank_account.balance).to eq 0    
+    end
+  
+    it 'account has an empty list for transactions as default' do
+      bank_account = BankAccount.new
+      expect(bank_account.history).to eq []
+    end
   end
 
-  it 'can deposit money into the account' do
-    bank_account = BankAccount.new
-    bank_account.deposit(1000)
-    expect(bank_account.balance).to eq 1000
+  context '#deposit' do
+    it 'can deposit money into the account' do
+      bank_account = BankAccount.new
+      bank_account.deposit(1000)
+      expect(bank_account.balance).to eq 1000
+    end
   end
   
   context '#withdraw' do
@@ -23,7 +32,7 @@ describe BankAccount do
       expect(bank_account.balance).to eq 500
     end
 
-    it 'should raise an error if the balance is 0' do
+    it 'should raise an error when requesting to withdraw if the balance is 0' do
       bank_account = BankAccount.new
       bank_account.deposit(1000)
       expect { bank_account.withdraw(1001) }.to raise_error 'Insufficient funds'
