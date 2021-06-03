@@ -1,6 +1,11 @@
 # Bank Tech Test
 
-### How to use
+## How to use
+
+* `git clone` this repo
+* `cd` into `bank_tech_test`
+* `bundle install`
+* run `irb` in the terminal
 
 ## Specification 
 
