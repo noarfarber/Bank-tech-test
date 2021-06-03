@@ -23,6 +23,9 @@ class BankAccount
   def withdraw(money)
     raise 'Insufficient funds' if money > @balance
     @balance -= money
+
+    debit = @transaction.new(0, money, @balance)
+    @transactions_history << debit
   end
 
 end

@@ -22,7 +22,7 @@ describe BankAccount do
       expect(bank_account.balance).to eq 1000
     end
 
-    it 'can add a deposit to the transactions history array' do
+    it 'can add a credit to the transactions history array' do
       bank_account.deposit(1000)
       expect(bank_account.transactions_history.first.credit).to eq 1000 
     end
@@ -39,12 +39,12 @@ describe BankAccount do
       bank_account.deposit(1000)
       expect { bank_account.withdraw(1001) }.to raise_error 'Insufficient funds'
     end
-  end
 
-  # describe '#print_statement' do
-  #   it 'can print a bank statement' do
-      
-  #   end
-  # end
+    it 'can add a debit to the transactions history array' do
+      bank_account.deposit(1000)
+      bank_account.withdraw(500)
+      expect(bank_account.transactions_history[1].debit).to eq 500
+    end
+  end
   
 end
