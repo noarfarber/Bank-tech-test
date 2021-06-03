@@ -28,12 +28,12 @@ date       || credit  || debit  || balance
 
 ```
 As a bank account holder
-So that I can briefly keep track of my financial situation
+So that I can briefly check my financial situation
 I would like to be able to see my balance
 ```
 ```
 As a bank account holder 
-So that I can safely keep my money in my bank account 
+So that I can safely keep my money
 I would like to be able to deposit money into my bank account
 ```
 ```
