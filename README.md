@@ -2,7 +2,7 @@
 
 ## How to use
 
-* `git clone` this repo
+* `git clone` this repository
 * `cd` into `bank_tech_test`
 * `bundle install`
 * run `irb` in the terminal
@@ -30,7 +30,6 @@ date       || credit  || debit  || balance
 ```
 
 ### User Stories
-
 ```
 As a bank account holder
 So that I can briefly check my financial situation
